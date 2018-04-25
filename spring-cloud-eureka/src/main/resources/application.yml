@@ -41,6 +41,8 @@ spring:
   application:
     name: spring-cloud-eureka-4
   profiles: localhost4
+  freemarker:
+    prefer-file-system-access: false
 server:
   port: 8004
 eureka:
