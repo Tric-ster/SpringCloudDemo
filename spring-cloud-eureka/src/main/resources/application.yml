@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-cloud-eureka
+    name: spring-cloud-eureka-1
   profiles: localhost1
 server:
   port: 8000
@@ -13,7 +13,7 @@ eureka:
 ---
 spring:
   application:
-    name: spring-cloud-eureka
+    name: spring-cloud-eureka-2
   profiles: localhost2
 server:
   port: 8001
@@ -26,7 +26,7 @@ eureka:
 ---
 spring:
   application:
-    name: spring-cloud-eureka
+    name: spring-cloud-eureka-3
   profiles: localhost3
 server:
   port: 8002
@@ -36,3 +36,16 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost1:8000/eureka/,http://localhost2:8001/eureka/
+---
+spring:
+  application:
+    name: spring-cloud-eureka-4
+  profiles: localhost4
+server:
+  port: 8004
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defalutZone: http://localhost:${server.port}/eureka/
