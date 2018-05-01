@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: spring-cloud-customer
+server:
+  port: 8200
+eureka:
+  client:
+    service-url:
+      defalutZone: http://localhost:8004/eureka

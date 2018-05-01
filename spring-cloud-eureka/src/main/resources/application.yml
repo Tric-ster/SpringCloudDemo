@@ -1,14 +1,15 @@
 spring:
   application:
-    name: spring-cloud-eureka-4
-  profiles: localhost4
-  freemarker:
-    prefer-file-system-access: false
+    name: spring-cloud-eurka
+
 server:
   port: 8004
+
 eureka:
+  instance:
+    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-      defalutZone: http://localhost:${server.port}/eureka/
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
